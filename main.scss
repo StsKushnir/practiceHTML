@@ -1,1 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.people {
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 35px 155px 35px;
+  grid-template-columns: repeat(2, 200px);
+  grid-template-rows: repeat(5, 200px, 231px);
+  row-gap: 30px;
+  column-gap: 40px;
+
+  @media (min-width: 750px) {
+  & {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 200px,231px);
+    padding: 30px 160px 155px 160px;
+  }
+  }
+
+  @media (min-width: 1000px) {
+    & {
+      grid-template-columns: repeat(4, 200px);
+      grid-template-rows: repeat(3, 200px, 231px);
+      padding: 30px 55px 197px 55px;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    & {
+      padding: 30px 305px 197px 305px;
+    }
+  }
+} 
+
+.person {
+  height: 231px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  
+
+  &__photo {
+    position: relative;
+    margin-bottom: 8px;
+  }
+  
+  &__img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  &__rank {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;
+    font-family: 'Arial';
+    font-size: 16px;
+    font-weight: 700;
+    color: #8B0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__name {
+    font-family: 'Arial';
+    margin: 0 auto;
+    color: #2F4F4F;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
+  }
+  &__extra {
+    display: none;
+  font-size: 18px;
+  line-height: 21px;
+  }
+  &:hover {
+    transform: scale(120%);
+    background-color: #EEEEEE;
+    width: 220px;
+    height: 287px;
+    transform: scale(120%);
+    border-radius: 5%;
+
+    .person__extra {
+      display: block;
+      margin-top: 9px;
+      text-align: center;
+    }
+  }
+    @media (min-width: 1000px) {
+    &:hover {
+    transition: transform 1s;
+      }
+    } 
+}
